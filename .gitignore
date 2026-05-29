@@ -1,0 +1,17 @@
+node_modules/
+.vite/
+out/
+dist/
+*.log
+.DS_Store
+Thumbs.db
+resources/runner.exe
+CLAUDE.md
+/src-tauri/target/
+/src-tauri/.cargo/
+vite.config.js
+/old/
+*.js
+!postcss.config.js
+!tailwind.config.js
+/resources/runner.exe

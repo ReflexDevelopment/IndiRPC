@@ -1,0 +1,37 @@
+[
+  {
+    "id": "356875221078245376",
+    "name": "VALORANT",
+    "icon": null,
+    "executables": [{ "name": "VALORANT.exe", "os": "win32" }],
+    "publishers": [{ "name": "Riot Games" }]
+  },
+  {
+    "id": "1158644745095909426",
+    "name": "Minecraft",
+    "icon": null,
+    "executables": [{ "name": "Minecraft.exe", "os": "win32" }],
+    "publishers": [{ "name": "Mojang Studios" }]
+  },
+  {
+    "id": "356869127241072640",
+    "name": "Rocket League",
+    "icon": null,
+    "executables": [{ "name": "RocketLeague.exe", "os": "win32" }],
+    "publishers": [{ "name": "Psyonix" }]
+  },
+  {
+    "id": "356869388862799873",
+    "name": "League of Legends",
+    "icon": null,
+    "executables": [{ "name": "League of Legends.exe", "os": "win32" }],
+    "publishers": [{ "name": "Riot Games" }]
+  },
+  {
+    "id": "356876590342340608",
+    "name": "Counter-Strike 2",
+    "icon": null,
+    "executables": [{ "name": "cs2.exe", "os": "win32" }],
+    "publishers": [{ "name": "Valve" }]
+  }
+]

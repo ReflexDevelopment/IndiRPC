@@ -1,0 +1,1 @@
+{"default":{"identifier":"default","description":"Default capabilities for IndiRPC","local":true,"windows":["main"],"permissions":["core:default","core:window:allow-minimize","core:window:allow-close","store:allow-load","store:allow-get","store:allow-set","store:allow-save","store:allow-has","store:allow-delete","store:allow-keys","http:default","opener:default"]}}
