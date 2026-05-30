@@ -45,9 +45,8 @@ impl DummyRunner {
             .map_err(|e| format!("Failed to copy runner: {}", e))?;
 
         std::process::Command::new(&dest)
-            .args(["--title", &game.name, "--hidden"])
+            .args(["--title", &game.name])
             .current_dir(&game_dir)
-            .creation_flags(CREATE_NO_WINDOW)
             .spawn()
             .map_err(|e| format!("Failed to spawn process: {}", e))?;
 
@@ -85,9 +84,25 @@ impl DummyRunner {
 
     pub fn runner_path(app: &tauri::AppHandle) -> PathBuf {
         use tauri::{path::BaseDirectory, Manager};
-        app.path()
-            .resolve("data/src-win.exe", BaseDirectory::Resource)
-            .unwrap_or_else(|_| PathBuf::from("resources/runner.exe"))
+
+        // Packaged build: resource dir contains data/src-win.exe
+        if let Ok(p) = app.path().resolve("data/src-win.exe", BaseDirectory::Resource) {
+            if p.exists() {
+                return p;
+            }
+        }
+
+        // Dev mode: walk up from the current exe to find project root resources/
+        if let Ok(exe) = std::env::current_exe() {
+            for ancestor in exe.ancestors().skip(1) {
+                let candidate = ancestor.join("resources").join("src-win.exe");
+                if candidate.exists() {
+                    return candidate;
+                }
+            }
+        }
+
+        PathBuf::from("resources/src-win.exe")
     }
 }
 

@@ -16,3 +16,5 @@ vite.config.js
 !tailwind.config.js
 /resources/runner.exe
 /src-win/target/
+Cargo.lock
+/src-win/cargo.lock
